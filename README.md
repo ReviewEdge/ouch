@@ -14,7 +14,7 @@ Ouch helps you keep track of spending.
    * [amount] [currency]
    * [category] [amount]
    * [amount] 
-* Categories cannot contain digits 
+* Categories cannot contain only digits 
 * Inputs must be divided by spaces
 * Currently supported currencies: 
     - default: US Dollar
