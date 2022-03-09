@@ -9,7 +9,7 @@ Ouch helps you keep track of spending.
     examples:
     - tot gas
     - total
-* Accepted inputs:
+* Accepted input formats:
    * [category] [amount] [currency]
    * [amount] [currency]
    * [category] [amount]
