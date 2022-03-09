@@ -10,6 +10,6 @@ Ouch helps you keep track of spending.
 
 -set default category
 
-0daily report, analysis
+-daily report, analysis
 
 -help message
