@@ -4,6 +4,7 @@ Ouch helps you keep track of spending.
 # help
 * Example input:
     - gas 65.23
+    - 1.23 g
 * To get totals, just send total (or "tot" for short) + the name of the category, or no category to see your overall total
     
     examples:
