@@ -3,11 +3,16 @@ Ouch helps you keep track of spending.
 
 # help
 * Example input:
+    
     gas 65.23
 * Accepted inputs:
+    
     [category] [amount] [currency]
+    
     [amount] [currency]
+    
     [category] [amount]
+    
     [amount] 
 * Categories cannot contain digits 
 * Inputs must be divided by spaces
@@ -16,6 +21,7 @@ Ouch helps you keep track of spending.
     - Euro (e)
     - Great British Pound (g)
 * You can undo a tracking by entering a negative amount
+
     (for example: "food -3.45 e")
 
 ## ideas
