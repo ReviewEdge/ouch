@@ -1,11 +1,11 @@
 from telethon import TelegramClient, events
 from forex_python.converter import CurrencyRates
 import re
+import config
 
-# Use your own values from my.telegram.org
-api_id = 16840635
-api_hash = '4f80ae1203630a2917681e3d9ef02757'
-bot_token = '5155265337:AAFfxMzgZ5_n0kXimEG2A8erEIVCEwvxcgk'
+api_id = config.my_api_id
+api_hash = config.my_api_hash
+bot_token = config.my_bot_token
 
 bot = TelegramClient('bot', api_id, api_hash).start(bot_token=bot_token)
 
@@ -34,7 +34,7 @@ def track_spend(message):
     #     c = CurrencyRates(force_decimal=False)
     #     total = c.convert("GBP", "USD", total)
 
-    return "tracking $" + str(round(total, 2)) + " USD"
+    return "tracking $" + "{:.2f}".format(total) + " USD"
 
 
 @bot.on(events.NewMessage)
