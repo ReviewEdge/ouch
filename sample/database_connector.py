@@ -57,7 +57,7 @@ def get_all_spend_cost_sum():
 def get_cost_sum_in_cat(category):
     conn = create_connection(db)
 
-    print(category) #delete me
+    print("getting sum: " + category) #delete me
 
     sql = ''' SELECT SUM(cost)
               FROM spends
@@ -75,4 +75,5 @@ def get_cost_sum_in_cat(category):
 if __name__ == '__main__':
     create_spend(.75, "gf", "small ball of fun")
     get_all_spend_cost_sum()
+
 

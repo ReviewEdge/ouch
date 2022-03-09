@@ -90,18 +90,40 @@ def send_sum(message):
 
 # read new messages
 @bot.on(events.NewMessage)
-async def my_event_handler(event):
+async def new_message_handler(event):
     event.raw_text = event.raw_text.lower()
 
-    # tracks spend if message contains numbers
-    if re.search(r'\d', event.raw_text):
-        await event.reply(track_spend(event.raw_text))
+    if "?" in event.raw_text:
+        await event.reply("""   
+* Example input:
+    gas 65.23
+* To get totals, just send total (or "tot" for short) + the name of the category, or no category to see your overall total
+    examples:
+    tot gas
+    total
+* Accepted inputs:
+    [category] [amount] [currency]
+    [amount] [currency]
+    [category] [amount]
+    [amount] 
+* Categories cannot contain only digits 
+* Inputs must be divided by spaces
+* Capital letters are ignored
+* Currently supported currencies: 
+    - default: US Dollar
+    - Euro (e)
+    - Great British Pound (g)
+* You can undo a tracking by entering a negative amount
+    (for example: "food -3.45 e")
+        """)
 
-    if "tot" in event.raw_text:
+    elif "tot" in event.raw_text:
         await event.reply(send_sum(event.raw_text))
 
-    if "undo" in event.raw_text:
-        print("this is where you undo the last db transaction")
+    # tracks spend if message contains numbers
+    elif re.search(r'\d', event.raw_text):
+        await event.reply(track_spend(event.raw_text))
+
 
 
 # run the bot
