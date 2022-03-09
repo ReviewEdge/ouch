@@ -10,14 +10,10 @@ Ouch helps you keep track of spending.
     - tot gas
     - total
 * Accepted inputs:
-    
-    [category] [amount] [currency]
-    
-    [amount] [currency]
-    
-    [category] [amount]
-    
-    [amount] 
+   * [category] [amount] [currency]
+   * [amount] [currency]
+   * [category] [amount]
+   * [amount] 
 * Categories cannot contain digits 
 * Inputs must be divided by spaces
 * Currently supported currencies: 
