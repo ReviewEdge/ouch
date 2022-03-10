@@ -1,3 +1,7 @@
+# Create Config
+cp ~/ouch/docs/config_example.py config.py
+
+
 # Install list
 
 pip3 install telethon
