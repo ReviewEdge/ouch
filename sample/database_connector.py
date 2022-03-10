@@ -66,7 +66,10 @@ def get_cost_sum_in_cat(category):
     cur = conn.cursor()
     cur.execute(sql, (category,))
 
-    cost_sum = "{:.2f}".format(cur.fetchone()[0])
+    try:
+        cost_sum = "{:.2f}".format(cur.fetchone()[0])
+    except TypeError:
+        raise TypeError
 
     conn.close()
 
