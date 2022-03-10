@@ -7,4 +7,11 @@ cp ~/ouch/docs/config_example.py config.py
 
 pip3 install telethon
 pip3 install forex-python
-pip3 install sqlite3
+
+# DB
+sudo apt install sqlite3
+
+mkdir db
+sqlite3 pimylifeupSQLite.db
+
+CREATE TABLE "spends" ("ID"	INTEGER UNIQUE, "Cost"	NUMERIC, "Description"	TEXT, "Category"	TEXT, "Date"	TEXT, PRIMARY KEY("ID" AUTOINCREMENT));

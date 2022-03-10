@@ -1,8 +1,9 @@
 import sqlite3
 from sqlite3 import Error
 from datetime import datetime
+import config
 
-db = r"C:\Users\RICHARDSONLG20\IdeaProjects\ouch\db\pythonsqlite.db"
+db = config.db_location
 
 def create_connection(db_file):
     # create a database connection to a SQLite database

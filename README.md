@@ -35,3 +35,5 @@ Ouch helps you keep track of spending.
 * help message
 * get it running on raspberry pi
 * change default currency
+* ability to add description
+  - some sort of key character before description input

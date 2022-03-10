@@ -125,8 +125,8 @@ async def new_message_handler(event):
         await event.reply(track_spend(event.raw_text))
 
 
-
 # run the bot
 if __name__ == '__main__':
     bot.start()
+    print("Running...")
     bot.run_until_disconnected()
