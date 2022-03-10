@@ -1,4 +1,5 @@
-# Create Config
+# Create Config 
+*you actually have to put config in sample, so this doesn't completely work:
 cp ~/ouch/docs/config_example.py config.py
 
 
