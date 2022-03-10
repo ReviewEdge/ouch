@@ -1,21 +1,5 @@
-*In gsheets_tool.py, you may have to change the path of the client_secrets_file.json to /home/pi/MyPiServer/server/spotify_controller_repo/sample/client_secrets_file.json or wherever the file is located (the full path)
+# Install list
 
-gsheets_tool:
-pip3 install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
-
-	Authenticating the google api is a bit difficult.  First, you will need to go to console.developers.google.com and create a new project.
-	Within the project, you will need to enable the Google Sheets API.  Then, you will need to click "manage" the Sheets API within the project.
-	Next, go to "credentials" (on the far left). Under OAuth 2.0 Client IDs, there will be a download option for the current project.
-	Download this file, and name it "client_secrets_file".  After downloading this file, move it to the /spotify_controller_repo/sample/ directory.
-	Next, run the gsheets_tool module. 
-	
-	*Likely for Windows only: This may open an error page in the browser. If so, copy the incorrect redirect URI from the error page.
- 	Open the console link that it tells you to visit, and paste in the redirect URI you copied as an authorized redirect URI and click save.
-	WITHOUT stopping the code that is currently running, click the authorization link again. This will attempt to authorize again, but this time
-	you have already entered the redirect URI, so it should work.
-
-	Go through the authorization process, authorize the app with the account that the google sheets were created with (that you set up in config.py).
-	After successful authorization, a "token.pickle" file will be created, and will save the authorization for the future.
-
-*Sometimes a "refresh" error occurs with the google API authentication. So far, the best way I have found to adress this is to delete the token.pickle
-file, and redo the authorization process described above.
+pip3 install telethon
+pip3 install forex-python
+pip3 install sqlite3
