@@ -73,7 +73,10 @@ def track_spend(message):
     total = round(total, 2)
 
     print("created spend " + str(dbc.create_spend(total, category)))
-    return "tracking $" + "{:.2f}".format(total) + " USD in category: " + str(category)
+    try:
+        return "tracking $" + "{:.2f}".format(total) + " USD in category: " + str(category)
+    except TypeError:
+        return "Category not found"
 
 
 def send_sum(message):
