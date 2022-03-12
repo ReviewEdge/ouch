@@ -19,7 +19,7 @@ def is_float(element):
         return False
 
 
-def track_spend(message):
+def track_spend(user_id, message):
     # gets rid of leading dollar sign
     message = message.replace("$", "")
 
@@ -72,19 +72,22 @@ def track_spend(message):
 
     total = round(total, 2)
 
-    print("created spend " + str(dbc.create_spend(total, category)))
+    print("created spend " + str(dbc.create_spend(user_id, total, category)) + " for user " + user_id)
     return "tracking $" + "{:.2f}".format(total) + " USD in category: " + str(category)
 
 
-def send_sum(message):
+def send_sum(user_id, message):
     delim = message.split()
 
     if len(delim) <= 1:
-        output = "All-time total: $" + str(dbc.get_all_spend_cost_sum())
+        try:
+            output = "All-time total: $" + str(dbc.get_all_spend_cost_sum(user_id))
+        except TypeError:
+            output = "You haven't tracked anything yet"
     else:
         category = delim[1]
-        try :
-            output = "All-time total in \"" + category + "\" is $" + str(dbc.get_cost_sum_in_cat(category))
+        try:
+            output = "All-time total in \"" + category + "\" is $" + str(dbc.get_cost_sum_in_cat(user_id, category))
         except TypeError:
             output = "Category not found"
 
@@ -95,6 +98,12 @@ def send_sum(message):
 @bot.on(events.NewMessage)
 async def new_message_handler(event):
     event.raw_text = event.raw_text.lower()
+    user_id = str(event.peer_id.user_id)
+
+    # creates new table if new user
+    if dbc.check_if_new_user(user_id):
+        print("found new user: " + user_id)
+        print(dbc.add_new_user_to_db(user_id))
 
     if "?" in event.raw_text:
         await event.reply("""   
@@ -121,11 +130,11 @@ async def new_message_handler(event):
         """)
 
     elif "tot" in event.raw_text:
-        await event.reply(send_sum(event.raw_text))
+        await event.reply(send_sum(user_id, event.raw_text))
 
     # tracks spend if message contains numbers
     elif re.search(r'\d', event.raw_text):
-        await event.reply(track_spend(event.raw_text))
+        await event.reply(track_spend(user_id, event.raw_text))
 
 
 # run the bot

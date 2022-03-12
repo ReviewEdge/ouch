@@ -26,6 +26,7 @@ Ouch helps you keep track of spending.
     (for example: "food -3.45 e")
 
 ## ideas
+* code to make new db on first run
 * undo!
 * allow new users to start convo with bot
 * give full totals report
