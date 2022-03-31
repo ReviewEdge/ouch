@@ -1,7 +1,5 @@
-# Create Config 
-*you actually have to put config in sample, so this doesn't completely work:
-cp ~/ouch/docs/config_example.py config.py
-
+# Create Config
+cp ~/ouch/docs/config_example.py ~/ouch/sample/config.py
 
 # Install list
 
@@ -12,6 +10,4 @@ pip3 install forex-python
 sudo apt install sqlite3
 
 mkdir db
-sqlite3 pimylifeupSQLite.db
-
-CREATE TABLE "spends" ("ID"	INTEGER UNIQUE, "Cost"	NUMERIC, "Description"	TEXT, "Category"	TEXT, "Date"	TEXT, PRIMARY KEY("ID" AUTOINCREMENT));
+sqlite3 ouchData.db

@@ -5,7 +5,7 @@ Ouch helps you keep track of spending.
 * Example input:
     - gas 65.23
     - 1.23 g
-* To get totals, just send total (or "tot" for short) + the name of the category, or no category to see your overall total
+* To get weekly totals, just send total (or "tot" for short) + the name of the category, or no category to see your overall total
     
     examples:
     - tot gas
@@ -24,11 +24,11 @@ Ouch helps you keep track of spending.
 * You can undo a tracking by entering a negative amount
 
     (for example: "food -3.45 e")
+* You can get all-time totals using alltimetot
 
 ## ideas
 * code to make new db on first run
 * undo!
-* allow new users to start convo with bot
 * give full totals report
 * sums by week, past 7 days, month
 * set default category

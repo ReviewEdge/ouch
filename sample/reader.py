@@ -94,6 +94,32 @@ def send_sum(user_id, message):
     return output
 
 
+def send_weekly_sum(user_id, message):
+    delim = message.split()
+
+    if len(delim) <= 1:
+        try:
+            output = "Total since Monday: $" + str(dbc.get_all_weekly_sum(user_id))
+        except TypeError:
+            output = "You haven't tracked anything yet"
+    else:
+        category = delim[1]
+        try:
+            output = "Total since Monday in \"" + category + "\" is $" + str(dbc.get_weekly_sum_in_cat(user_id, category))
+        except TypeError:
+            output = "Category not found"
+
+    return output
+
+
+def send_all_time_report(user_id):
+    return dbc.get_all_time_report(user_id)
+
+
+def send_weekly_report(user_id):
+    return dbc.get_weekly_report(user_id)
+
+
 # read new messages
 @bot.on(events.NewMessage)
 async def new_message_handler(event):
@@ -109,7 +135,7 @@ async def new_message_handler(event):
         await event.reply("""   
 * Example input:
     gas 65.23
-* To get totals, just send total (or "tot" for short) + the name of the category, or no category to see your overall total
+* To get weekly totals, just send total (or "tot" for short) + the name of the category, or no category to see your overall total
     examples:
     tot gas
     total
@@ -127,10 +153,20 @@ async def new_message_handler(event):
     - Great British Pound (g)
 * You can undo a tracking by entering a negative amount
     (for example: "food -3.45 e")
+* You can get all-time totals using alltimetot
         """)
 
-    elif "tot" in event.raw_text:
+    elif "alltimetot" in event.raw_text:
         await event.reply(send_sum(user_id, event.raw_text))
+
+    elif "tot" in event.raw_text:
+        await event.reply(send_weekly_sum(user_id, event.raw_text))
+
+    elif "alltimereport" in event.raw_text:
+        await event.reply(send_all_time_report(user_id))
+
+    elif "report" in event.raw_text:
+        await event.reply(send_weekly_report(user_id))
 
     # tracks spend if message contains numbers
     elif re.search(r'\d', event.raw_text):
