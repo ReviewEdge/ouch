@@ -5,6 +5,7 @@ import config
 
 db = config.db_location
 
+
 def create_connection():
     # create a database connection to a SQLite database
     conn = None
