@@ -27,6 +27,8 @@ Ouch helps you keep track of spending.
 * You can get all-time totals using alltimetot
 
 ## ideas
+* update help message
+* fix weekly report not giving error message if no data yet
 * code to make new db on first run
 * undo!
 * give full totals report

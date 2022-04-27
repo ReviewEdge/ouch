@@ -202,16 +202,23 @@ def get_weekly_report(user_id):
     print("getting weekly report") #delete me
 
     sql = """SELECT 
-                Category,
-                SUM(Cost)
-             FROM
-                User""" + user_id + """Spends
-            GROUP BY
-                Category
-            HAVING
-                DATE(date) > DATE('now', 'weekday 0', '-7 days')
-            ORDER BY
-                COUNT(Category) DESC;"""
+                recent.Category,
+                SUM(recent.Cost)
+              FROM ( 
+		        SELECT 
+					Category,
+					Cost,
+					Date
+				FROM
+					User""" + user_id + """Spends
+				WHERE
+					DATE(date) > DATE('now', 'weekday 0', '-7 days')
+			    ) as recent
+			  GROUP BY
+			    recent.Category
+			  ORDER BY
+                SUM(recent.Cost) DESC;"""
+
     cur = conn.cursor()
     cur.execute(sql)
 
@@ -233,5 +240,5 @@ if __name__ == '__main__':
     # print(get_all_weekly_sum("1362786492"))
     # print(get_weekly_sum_in_cat("1362786492", "yolobob"))
 
-    print(get_all_time_report("1362786492"))
+    print(get_weekly_report("1362786492"))
 
