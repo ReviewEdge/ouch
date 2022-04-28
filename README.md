@@ -8,7 +8,7 @@ Ouch is a Telegram bot that helps you keep track of spending.  Send a message (s
 - Ouch automatically converts between currencies, making it perfect for international travel
 
 # help
-* Start by send ? to @the_ouch_bot on Telegram
+* Start by sending ? to @the_ouch_bot on Telegram
 * Example tracking input:
     - gas 65.23
     - 1.23 g
