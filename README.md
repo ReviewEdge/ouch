@@ -14,7 +14,7 @@ Ouch is a Telegram bot that helps you keep track of spending.  Send a message (s
 * To get weekly totals, just send total (or "tot" for short) + the name of the category, or no category to see your overall total
 * Send report to see your spending across all categories for the week (since Monday), or alltimereport to see your alltime spending
     
-    examples of input:
+    Examples:
     - gas 23
     - food 
     - tot gas
