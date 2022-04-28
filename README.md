@@ -34,19 +34,4 @@ Ouch is a Telegram bot that helps you keep track of spending.  Send a message (s
 * You can undo a tracking by entering a negative amount
 
     (for example: "food -3.45 e")
-* You can get all-time totals using alltimetot
-
-## ideas
-* update help message
-* fix weekly report not giving error message if no data yet
-* code to make new db on first run
-* undo!
-* give full totals report
-* sums by week, past 7 days, month
-* set default category
-* daily report, analysis
-* help message
-* get it running on raspberry pi
-* change default currency
-* ability to add description
-  - some sort of key character before description input
+* You can get an all-time report or all-time totals using alltimereport or alltimetot
