@@ -8,19 +8,19 @@ Ouch is a Telegram bot that helps you keep track of spending.  Send a message (s
 - Ouch automatically converts between currencies, making it perfect for international travel
 
 # help
-* Example input:
+* Example tracking input:
     - gas 65.23
     - 1.23 g
-* To get weekly totals, just send total (or "tot" for short) + the name of the category, or no category to see your overall total
-* Send report to see your spending across all categories for the week (since Monday), or alltimereport to see your alltime spending
+* To get weekly (since Monday) totals, send total (or "tot" for short) plus the name of the category, or no category to see your overall total
+* To get a weekly spending report, send report, and you will see your spending across all categories
     
     Examples:
-    - gas 23
     - food 
     - tot gas
     - total
     - report
     - alltimereport
+    - alltimetot gas
 * Accepted tracking input formats:
    * [category] [amount] [currency]
    * [amount] [currency]

@@ -133,19 +133,19 @@ async def new_message_handler(event):
 
     if "?" in event.raw_text:
         await event.reply("""   
-* Example input:
+* Example tracking input:
     gas 65.23
-* To get weekly totals, just send total (or "tot" for short) + the name of the category, or no category to see your overall total
+* To get weekly (since Monday) totals, send total (or "tot" for short) plus the name of the category, or no category to see your overall total
+* To get a weekly spending report, send report, and you will see your spending across all categories
     examples:
     tot gas
-    total
+    report
 * Accepted inputs:
     [category] [amount] [currency]
     [amount] [currency]
     [category] [amount]
     [amount] 
-* Categories cannot contain only digits 
-* Inputs must be divided by spaces
+* Categories cannot contain only digits
 * Capital letters are ignored
 * Currently supported currencies: 
     - default: US Dollar
@@ -153,7 +153,7 @@ async def new_message_handler(event):
     - Great British Pound (g)
 * You can undo a tracking by entering a negative amount
     (for example: "food -3.45 e")
-* You can get all-time totals using alltimetot
+* You can get an all-time report or all-time totals using alltimereport or alltimetot
         """)
 
     elif "alltimetot" in event.raw_text:
