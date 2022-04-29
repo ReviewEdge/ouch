@@ -10,6 +10,7 @@ def create_users_table():
     sql = """CREATE TABLE IF NOT EXISTS Users (
         "UserID" INTEGER UNIQUE,
         "DateAdded" TEXT,
+        "DefaultCurrency" TEXT CHECK( DefaultCurrency IN ("U","E","G") )   NOT NULL DEFAULT "U",
         PRIMARY KEY("UserID")
     );"""
 

@@ -1,14 +1,9 @@
 ## ideas
-* update help message
-* fix weekly report not giving error message if no data yet
 * code to make new db on first run
 * undo!
-* give full totals report
 * sums by week, past 7 days, month
 * set default category
 * daily report, analysis
-* help message
-* get it running on raspberry pi
 * change default currency
 * ability to add description
   - some sort of key character before description input

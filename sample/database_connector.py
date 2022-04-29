@@ -42,7 +42,7 @@ def check_if_new_user(user_id):
 def add_new_user_to_db(user_id):
     conn = create_connection()
 
-    sql1 = """INSERT INTO Users(UserID, DateAdded)
+    sql1 = """INSERT INTO Users(UserID, DateAdded, "U")
               VALUES(?,?)"""
 
     sql2 = "CREATE TABLE IF NOT EXISTS User" + user_id + """Spends (

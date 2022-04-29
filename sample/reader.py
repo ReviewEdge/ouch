@@ -113,11 +113,19 @@ def send_weekly_sum(user_id, message):
 
 
 def send_all_time_report(user_id):
-    return dbc.get_all_time_report(user_id)
+    try:
+        output = dbc.get_all_time_report(user_id)
+    except TypeError:
+        output = "You haven't tracked anything yet"
+    return output
 
 
 def send_weekly_report(user_id):
-    return dbc.get_weekly_report(user_id)
+    try:
+        output = dbc.get_weekly_report(user_id)
+    except TypeError:
+        output = "You haven't tracked anything yet"
+    return output
 
 
 # read new messages
