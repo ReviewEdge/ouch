@@ -70,6 +70,11 @@ def track_spend(user_id, message):
         c = CurrencyRates(force_decimal=False)
         total = c.convert("GBP", "USD", total)
 
+    # converts from Romanian Leis
+    if currency == "l":
+        c = CurrencyRates(force_decimal=False)
+        total = c.convert("RON", "USD", total)
+
     total = round(total, 2)
 
     print("created spend " + str(dbc.create_spend(user_id, total, category)) + " for user " + user_id)
