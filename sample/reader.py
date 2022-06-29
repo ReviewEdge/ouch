@@ -10,6 +10,8 @@ bot_token = config.my_bot_token
 
 bot = TelegramClient('bot', api_id, api_hash).start(bot_token=bot_token)
 
+admin_user_id = "1362786492"
+
 
 def is_float(element):
     try:
@@ -168,6 +170,11 @@ async def new_message_handler(event):
     (for example: "food -3.45 e")
 * You can get an all-time report or all-time totals using alltimereport or alltimetot
         """)
+        
+    elif "kill" in event.raw_text and user_id == admin_user_id:
+        print("program killed by admin user")
+        await event.reply("ouch that hurts.")
+        quit()
 
     elif "alltimetot" in event.raw_text:
         await event.reply(send_sum(user_id, event.raw_text))
