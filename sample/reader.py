@@ -172,7 +172,7 @@ async def new_message_handler(event):
         """)
         
     elif "kill" in event.raw_text and user_id == admin_user_id:
-        print("program killed by admin user")
+        print("program killed by the admin user")
         await event.reply("ouch that hurts.")
         quit()
 
