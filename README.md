@@ -4,8 +4,8 @@ Ouch is a Telegram bot that helps you keep track of spending.  Send a message (s
 - Track individual purchases by category and date
 - View a weekly or all-time spending report, sorted by category
 - View weekly or all-time totals in each or all categories
-- Ouch automatically creates a new account for you in its database when you text it for the first time
-- Ouch automatically converts between currencies, making it perfect for international travel
+- Ouch will create a new account for you when you text it for the first time
+- Ouch automatically converts between currencies with current exchange rates, making it perfect for international travel
 
 # Help
 * Start by sending ? to @the_ouch_bot on Telegram
